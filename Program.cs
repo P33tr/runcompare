@@ -11,6 +11,9 @@ builder.Services.AddOpenApi();
 
 builder.Services.AddRazorComponents();
 
+//===================================
+//    BUILD
+//===================================
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -19,7 +22,11 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 }
 
+// Redirect HTTP requests to HTTPS to ensure secure communication
 app.UseHttpsRedirection();
+
+// Map and serve static web assets
+app.MapStaticAssets();
 
 Api.AddRoutes(app);
 

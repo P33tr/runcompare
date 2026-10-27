@@ -1,0 +1,37 @@
+<!-- Features/Shared/HtmxLayout.razor 
+     The sample's App.razor and MainLayout.razor files combined together. Don't forget the MainLayout.razor.css file! -->
+@inherits LayoutComponentBase
+
+<!DOCTYPE html>
+<html class="h-100" lang="en-us">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <base href="/"/>
+    <link rel="stylesheet" href="@Assets["bootstrap/bootstrap.min.css"]"/>
+    <link rel="stylesheet" href="@Assets["app.css"]"/>
+    <link href="HtmxMinimalApi.styles.css" rel="stylesheet">
+    <script src="https://unpkg.com/htmx.org@2.0.4"></script> <!-- This is the only thing I have added. HTMX! -->
+    <HeadOutlet/>
+    <title>P33tr RunCompare</title>
+</head>
+<body> 
+<div class="page">
+    <div class="sidebar">
+        <NavMenu/>
+    </div>
+
+    <main>
+        <div class="top-row px-4">
+            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
+        </div>
+
+        <article class="content px-4">
+            @Body
+        </article>
+    </main>
+</div>
+
+<!-- I removed the exception notification - that is covered elsewhere. -->
+</body>
+</html>

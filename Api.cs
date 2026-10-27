@@ -9,7 +9,7 @@ public static class Api
     {
         IResult Render(string html)
         {
-            return Content(html);
+            return html;
         }
         app.MapGet("/health", () =>
         {
