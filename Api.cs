@@ -7,15 +7,12 @@ public static class Api
     
     public static void AddRoutes( WebApplication app)
     {
-        IResult Render(string html)
-        {
-            return html;
-        }
+
         app.MapGet("/health", () =>
         {
             
             string html = "<html><body><h1>OK</h1></body></html>";
-            return Render(html);
+            
         });
         
         var summaries = new[]

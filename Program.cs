@@ -29,6 +29,7 @@ app.UseHttpsRedirection();
 app.MapStaticAssets();
 
 Api.AddRoutes(app);
+Pages.AddRoutes(app);
 
 app.Run();
 
